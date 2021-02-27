@@ -19,7 +19,7 @@ Design project integrates Google maps to show the designer location. Provides al
 | 4   | get    | /signup                                     | Renders signup form                                                    |
 | 5   | post   | /signup                                     | Validates user signup info                                             |
 | 6   | post   | /logout                                     | Logs user out                                                          |
-| 7   | get    | /office                              | Renders office API GOOGLE MAPS view                                             |
+| 7   | get    | /contact                              | Renders office API GOOGLE MAPS view                                             |
 | 8  | get    | /profile/user:id                                     | Renders user profile and type of user with editing form   
 | 9  | post / put*  | /profile/user:id                                     | Renders user profile and type of user with editing form                    
 
