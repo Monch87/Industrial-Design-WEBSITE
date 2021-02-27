@@ -6,9 +6,9 @@ const userSchema = new Schema(
         name: String,
         username: {
             type: String,
-            required: true,
-            unique: true,
-            trim: true
+            required: true,  //El campo es obligatorio
+            unique: true, //El elemento debe ser unico y no repetirse
+            trim: true //Los espacios serán eliminados
         },
         password: {
             type: String,
