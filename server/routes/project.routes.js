@@ -3,9 +3,9 @@ const router = express.Router()
 
 const Project = require('./../models/project.model')
 
-//router.get('/AllProjects', (req, res) => res.json({ message: 'hola' }))
+// => res.json({ message: 'hola' }))
 
-router.get('/AllProjects', (req, res) => { 
+router.get('/allProjects', (req, res) => { 
 
     Project
         .find()
@@ -14,8 +14,8 @@ router.get('/AllProjects', (req, res) => {
 })
 
 
-router.get('/getOneProject/:project_id', (req, res) => {
-
+router.get('/oneProject/:project_id', (req, res) => {
+  
     Project
         .findById(req.params.project_id)
         .then(response => res.json(response))
@@ -39,18 +39,6 @@ router.put('/editProject/:project_id', (req, res) => {
         .then(response => res.json(response))
         .catch(err => res.status(500).json({ code: 500, message: 'Error editing projects', err }))
 })
-
-
-// router.post('/project/:project_id/delete', (req, res) => {
-
-//     const project_id = req.params.user_id
-
-//     User
-//         .findByIdAndRemove(user_id)
-//          .then(response => res.redirect('/AllProjects'))
-//         .catch(err => res.status(500).json({ code: 500, message: 'Error deleting projects', err }))
-// })
-
 
 
 module.exports = router
