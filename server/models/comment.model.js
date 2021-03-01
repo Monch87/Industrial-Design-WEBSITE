@@ -1,14 +1,13 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const ratingSchema = new Schema(
+const commentSchema = new Schema(
     {
         user: {
             type: mongoose.Types.ObjectId,
             ref: "User"
         },
-        title_project: String,
-        rating: Number,
+        title: String,
         comment: String
     },
     {
@@ -16,4 +15,4 @@ const ratingSchema = new Schema(
     }
 );
 
-module.exports = mongoose.model("Rating", ratingSchema);
+module.exports = mongoose.model("Comment", commentSchema);
