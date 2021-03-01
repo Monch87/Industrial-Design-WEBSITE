@@ -3,12 +3,11 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
     {
-        name: String,
         username: {
             type: String,
-            required: true,  //El campo es obligatorio
-            unique: true, //El elemento debe ser unico y no repetirse
-            trim: true //Los espacios serán eliminados
+            required: true,  
+            unique: true,
+            trim: true 
         },
         password: {
             type: String,
@@ -16,11 +15,11 @@ const userSchema = new Schema(
         },
         avatar: {
             type: String,
-            default: '//cloudinary//',
+            default: '',
         },
         role: {
             type: String,
-            enum: ['USER', 'ADMIN','PARTNER'],
+            enum: ['USER', 'ADMIN'],
             default: 'USER'
         },
 

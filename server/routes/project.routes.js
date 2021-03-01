@@ -3,9 +3,16 @@ const router = express.Router()
 
 const Project = require('./../models/project.model')
 
-// => res.json({ message: 'hola' }))
-
 router.get('/allProjects', (req, res) => { 
+
+    Project
+        .find()
+        .then(response => res.json(response))
+        .catch(err => res.status(500).json({ code: 500, message: 'Error fetching projects', err }))
+})
+
+
+router.get('/byOwner/:id', (req, res) => {
 
     Project
         .find()
@@ -38,6 +45,17 @@ router.put('/editProject/:project_id', (req, res) => {
         .findByIdAndUpdate(req.params.project_id, req.body)
         .then(response => res.json(response))
         .catch(err => res.status(500).json({ code: 500, message: 'Error editing projects', err }))
+})
+
+
+router.get('/deleteProject/:project_id', (req, res) => {
+
+    const project_id = req.params.project_id
+
+    Project
+        .findByIdAndDelete(project_id)
+        .then(response => res.json(response))
+        .catch(err => res.status(500).json({ code: 500, message: 'Error deleting projects', err }))
 })
 
 
