@@ -5,18 +5,17 @@ const bcrypt = require("bcrypt")
 
 const User = require("../models/user.model")
 
-// User signup
 router.post('/signup', (req, res) => {
 
     const { username, password } = req.body
 
     if (!username || !password) {
-        res.status(400).json({ message: 'Fill the blanks' })
+        res.status(400).json({ message: 'Rellena todos los campos' })
         return
     }
 
     if (password.length < 2) {
-        res.status(400).json({ message: 'Insecure password' })
+        res.status(400).json({ message: 'Contraseña insegura' })
         return
     }
 
@@ -24,11 +23,9 @@ router.post('/signup', (req, res) => {
         .findOne({ username })
         .then(foundUser => {
             if (foundUser) {
-                res.status(400).json({ message: 'User already exists' })
+                res.status(400).json({ message: 'El usuario ya existe' })
                 return
             }
-
-             // Password validation
 
             const salt = bcrypt.genSaltSync(10)
             const hashPass = bcrypt.hashSync(password, salt)
@@ -41,7 +38,6 @@ router.post('/signup', (req, res) => {
 })
 
 
-// User login
 
 router.post('/login', (req, res, next) => {
 
@@ -62,7 +58,7 @@ router.post('/login', (req, res, next) => {
     })(req, res, next)
 })
 
-// User logout
+
 
 router.post('/logout', (req, res) => {
     req.logout()
