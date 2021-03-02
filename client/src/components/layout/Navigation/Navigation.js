@@ -1,8 +1,6 @@
 import { Navbar, Nav } from 'react-bootstrap'
-// import logo from './logo.png'
-
-import { NavLink } from 'react-router-dom'
-
+import logo from './VAMMlogo.png'
+import { NavLink, Link } from 'react-router-dom'
 import AuthService from './../../../service/auth.service'
 
 const Navigation = ({ storeUser, loggedUser }) => {
@@ -18,23 +16,24 @@ const Navigation = ({ storeUser, loggedUser }) => {
     }
 
     return (
-        <Navbar bg="dark" variant="dark" expand="md" style={{ marginBottom: 30 }}>
-            {/* <Link to="/">
+        <Navbar className="justify-content-center" bg="transparent" variant="light" expand="md" style={{ marginBottom: 30 }}>
+            <Link to="/">
                 <Navbar.Brand> <img
                     alt=""
                     src={logo}
-                    width="30"
-                    height="30"
+                    width="120"
+                    height="80"
                     className="d-inline-block align-top"
-                />{' '}Coasters Fever</Navbar.Brand>
-            </Link> */}
+              //VAMM Designer      
+           />{' '} </Navbar.Brand>
+            </Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
                     <NavLink to="/" exact>
                         <Nav.Link as="span">Home</Nav.Link>
                     </NavLink>
-                    <NavLink to="/project-list">
+                    <NavLink to="/projects-list">
                         <Nav.Link as="span">Projects</Nav.Link>
                     </NavLink>
                     <NavLink to="/services">
