@@ -57,9 +57,6 @@ const Navigation = ({ storeUser, loggedUser }) => {
                             </>
                     }
 
-                    {/* <NavLink to="/perfil">
-                        <Nav.Link as="span">Bienvenid@, {loggedUser ? loggedUser.username : 'invitado'}</Nav.Link>
-                    </NavLink> */}
                 </Nav>
             </Navbar.Collapse>
         </Navbar >

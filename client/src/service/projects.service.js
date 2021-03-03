@@ -8,11 +8,11 @@ class ProjectService {
     }
 
     getProjects = () => this.api.get('/allProjects')
-    getbyOwner = userId => this.api.get(`/byOwner/${userId}`)  ///PREGUNTAR A TEO SI ESTO ESTA BIEN
+    getbyOwner = userId => this.api.get(`/byOwner/${userId}`)  
     getProject = projectId => this.api.get(`/oneProject/${projectId}`)
     saveProject = projectDetails => this.api.post('/newProject', projectDetails)
     editProject = (projectId, projectDetails) => this.api.put(`/editProject/${projectId}`, projectDetails)
-    deleteProject = projectId => this.api.get(`/deleteProject/${projectId}`) ///PREGUNTAR A TEO SI ESTO ESTA BIEN
+    deleteProject = projectId => this.api.get(`/deleteProject/${projectId}`) 
 }
 
 export default ProjectService
