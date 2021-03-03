@@ -3,17 +3,16 @@ import AuthService from '../../../service/auth.service'
 
 import { Form, Button, Container, Row, Col } from 'react-bootstrap'
 
-class Login extends Component {
+class Signup extends Component {
 
     constructor() {
         super()
         this.state = {
             username: '',
-            password: ''
+            password: '',
         }
 
         this.authService = new AuthService()
-
     }
 
     handleInputChange(e) {
@@ -26,10 +25,10 @@ class Login extends Component {
         e.preventDefault()
 
         this.authService
-            .login(this.state)
+            .signup(this.state)
             .then(response => {
                 this.props.storeUser(response.data)
-                this.props.history.push('/')
+                this.props.history.push('/projects-list')
             })
             .catch(err => console.log({ err }))
     }
@@ -38,13 +37,10 @@ class Login extends Component {
     render() {
         return (
             <Container>
-
                 <Row>
-
                     <Col md={{ span: 4, offset: 4 }}>
 
-                        <h1>Log in</h1>
-
+                        <h1>User register</h1>
                         <hr />
 
                         <Form onSubmit={e => this.handleSubmit(e)}>
@@ -52,18 +48,26 @@ class Login extends Component {
                                 <Form.Label>Username</Form.Label>
                                 <Form.Control type="text" name="username" value={this.state.username} onChange={e => this.handleInputChange(e)} />
                             </Form.Group>
+
                             <Form.Group>
                                 <Form.Label>Password</Form.Label>
                                 <Form.Control type="password" name="password" value={this.state.password} onChange={e => this.handleInputChange(e)} />
                             </Form.Group>
 
-                            <Button variant="dark" block type="submit">Access</Button>
+                            {/* <Form.Group>
+                                <Form.Label>Avatar</Form.Label>
+                                <Form.Control type="text" name="avatar" value={this.state.avatar} onChange={e => this.handleInputChange(e)} />
+                            </Form.Group>
+
+                            <Form.Group>
+                                <Form.Label>Role</Form.Label>
+                                <Form.Control type="text" name="role" value={this.state.role} onChange={e => this.handleInputChange(e)} />
+                            </Form.Group> */}
+
+                            <Button variant="dark" block type="submit">Register</Button>
                         </Form>
-
                     </Col>
-
                 </Row>
-
             </Container>
         )
     }
@@ -71,4 +75,4 @@ class Login extends Component {
 
 
 
-export default Login
+export default Signup

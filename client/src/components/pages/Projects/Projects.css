@@ -1,0 +1,22 @@
+.project-card {
+    margin-bottom: 40px;
+    /* margin-top: 40px; */
+}
+
+
+.project-card img {
+    height: 400px;
+    object-fit: cover;
+}
+
+
+.project-card h2 {
+font-size: 1.4em;
+font-weight: 300;
+}
+
+
+.new-project-btn{
+margin-bottom: 40px;
+
+}

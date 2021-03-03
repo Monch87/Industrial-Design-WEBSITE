@@ -10,12 +10,12 @@ router.post('/signup', (req, res) => {
     const { username, password } = req.body
 
     if (!username || !password) {
-        res.status(400).json({ message: 'Rellena todos los campos' })
+        res.status(400).json({ message: 'Fill the blanks' })
         return
     }
 
     if (password.length < 2) {
-        res.status(400).json({ message: 'Contraseña insegura' })
+        res.status(400).json({ message: 'Insecure password' })
         return
     }
 
@@ -23,7 +23,7 @@ router.post('/signup', (req, res) => {
         .findOne({ username })
         .then(foundUser => {
             if (foundUser) {
-                res.status(400).json({ message: 'El usuario ya existe' })
+                res.status(400).json({ message: 'User already exits' })
                 return
             }
 
@@ -57,7 +57,6 @@ router.post('/login', (req, res, next) => {
 
     })(req, res, next)
 })
-
 
 
 router.post('/logout', (req, res) => {

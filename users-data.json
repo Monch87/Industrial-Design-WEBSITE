@@ -1,0 +1,91 @@
+[{
+  "_id": {
+    "$oid": "603e11f896c2a02df23c65fa"
+  },
+  "avatar": "",
+  "role": "USER",
+  "username": "monch87",
+  "password": "$2b$10$kT5Qz1wP0mzMbGm1I2kUBu.OHqFVu8MUSx/f/OzXHLymjW4VsVBPm",
+  "createdAt": {
+    "$date": "2021-03-02T10:22:48.614Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-02T10:22:48.614Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "603e12dd9163ea336369d579"
+  },
+  "avatar": "",
+  "role": "USER",
+  "username": "teo90",
+  "password": "$2b$10$N.ARsZ/tB4R7AJG7CM5Igu/yAaPB1mSTFmNjprssVN0WG8JkKrdkS",
+  "createdAt": {
+    "$date": "2021-03-02T10:26:37.909Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-02T10:26:37.909Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "603e14159163ea336369d57a"
+  },
+  "avatar": "",
+  "role": "USER",
+  "username": "teo91",
+  "password": "$2b$10$Ck6MBJnj2IkpJ/LDuJvMZOY1CUQlfcHW2wgU2n.wB1bCIn2E/y262",
+  "createdAt": {
+    "$date": "2021-03-02T10:31:49.870Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-02T10:31:49.870Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "603e147bcc21b1347d8004bd"
+  },
+  "avatar": "",
+  "role": "USER",
+  "username": "teo92",
+  "password": "$2b$10$mz5yDhV9UyXOlJYgJpKwYeVdD74ROCUnw7VIwamSfPby/VvlBQme6",
+  "createdAt": {
+    "$date": "2021-03-02T10:33:31.982Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-02T10:33:31.982Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "603e167e6dc4633889b596af"
+  },
+  "avatar": "",
+  "role": "USER",
+  "username": "teo93",
+  "password": "$2b$10$4CbK6qhNAuDLxHWanSdhROJW/iFmxhhqkkfD8wm7OSMPy9gUngjgm",
+  "createdAt": {
+    "$date": "2021-03-02T10:42:06.377Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-02T10:42:06.377Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "603e16ff6c64bf39ae4cc10e"
+  },
+  "avatar": "",
+  "role": "USER",
+  "username": "teo95",
+  "password": "$2b$10$.mcgG5AgI6A2o7mP8xoHr.ZqaF11E3h5M9vJoF6EddGt4X1DGpj8G",
+  "createdAt": {
+    "$date": "2021-03-02T10:44:15.988Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-02T10:44:15.988Z"
+  },
+  "__v": 0
+}]

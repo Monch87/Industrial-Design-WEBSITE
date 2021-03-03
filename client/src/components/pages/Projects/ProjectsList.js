@@ -1,8 +1,11 @@
+import ProjectCard from './ProjectCard'
+import { Row } from 'react-bootstrap'
+
 const ProjectsList = ({projects}) => {
     return (
-        <ul>
-            {projects?.map(elm => <li>{elm.title}</li>)}
-        </ul>
+        <Row>
+            {projects?.map(elm => <ProjectCard key={elm._id} {...elm} />)}
+        </Row>
     )
 }
 

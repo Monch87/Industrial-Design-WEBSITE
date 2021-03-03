@@ -23,8 +23,7 @@ const Navigation = ({ storeUser, loggedUser }) => {
                     src={logo}
                     width="120"
                     height="80"
-                    className="d-inline-block align-top"
-              //VAMM Designer      
+                    className="d-inline-block align-top"  
            />{' '} </Navbar.Brand>
             </Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -36,9 +35,9 @@ const Navigation = ({ storeUser, loggedUser }) => {
                     <NavLink to="/projects-list">
                         <Nav.Link as="span">Projects</Nav.Link>
                     </NavLink>
-                    <NavLink to="/services">
+                    {/* <NavLink to="/services">
                         <Nav.Link as="span">Services</Nav.Link>
-                    </NavLink>
+                    </NavLink> */}
                     <NavLink to="/contact">
                         <Nav.Link as="span">Contact</Nav.Link>
                     </NavLink>
@@ -49,7 +48,7 @@ const Navigation = ({ storeUser, loggedUser }) => {
                             <Nav.Link as="span" onClick={() => logoutUser()}>Log out</Nav.Link>
                             :
                             <>
-                                <NavLink to="/singup">
+                                <NavLink to="/signup">
                                     <Nav.Link as="span">Sign up</Nav.Link>
                                 </NavLink>
                                 <NavLink to="/login">

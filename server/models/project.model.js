@@ -7,7 +7,7 @@ const projectSchema = new Schema(
         description: String,
         imageUrl: String,
         Started_Date: Date,
-        End_Date: Date,
+        Ended_Date: Date,
         customer: { 
             type: Schema.Types.ObjectId, 
             ref: 'User',
