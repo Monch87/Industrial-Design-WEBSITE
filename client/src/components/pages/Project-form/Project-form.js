@@ -10,11 +10,18 @@ class ProjectForm extends Component {
         super()
         this.state = {
             title: '',
-            started: '',
-            ended: '',
+            started_Date: '',
+            ended_Date: '',
             description: '',
             imageUrl: ''
-            /*customer: '' */
+            /*customer: ''
+            {
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+            required: true,
+            unique: true,
+            } */
+            /*review-customer: '' */
         }
 
         this.projectService = new ProjectService()
@@ -50,18 +57,18 @@ class ProjectForm extends Component {
 
                     <Form.Group>
                         <Form.Label>Started project date:</Form.Label>
-                        <Form.Control type="text" name="started" value={this.state.started} onChange={e => this.handleInputChange(e)} />
+                        <Form.Control type="text" name="started-date" value={this.state.started_Date} onChange={e => this.handleInputChange(e)} />
                     </Form.Group>
 
                     <Form.Group>
                         <Form.Label>Ended project date:</Form.Label>
-                        <Form.Control type="text" name="ended" value={this.state.ended} onChange={e => this.handleInputChange(e)} />
+                        <Form.Control type="text" name="ended-date" value={this.state.ended_Date} onChange={e => this.handleInputChange(e)} />
                     </Form.Group>
 
                     <Form.Group>
                         <Form.Label>Description:</Form.Label>
                         <Form.Control as="textarea" rows={3} name="description" innertext={this.state.description} onChange={e => this.handleInputChange(e)} />
-                    </Form.Group>                  {/* USÉ INNERTEXT EN VEZ DE VALUE  */}
+                    </Form.Group>                  {/* TODO -TOCHECK USÉ INNERTEXT EN VEZ DE VALUE  */}
 
                     <Form.Group>
                         <Form.Label>Image(URL):</Form.Label>

@@ -28,8 +28,8 @@ class Login extends Component {
         this.authService
             .login(this.state)
             .then(response => {
-                this.props.storeUser(response.data)
-                this.props.history.push('/')
+                this.props.appUser(response.data)
+                this.props.history.push('/projects-list')
             })
             .catch(err => console.log({ err }))
     }

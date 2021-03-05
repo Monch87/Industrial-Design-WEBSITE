@@ -4,10 +4,10 @@ const Schema = mongoose.Schema;
 const projectSchema = new Schema(
     {
         title: String,
+        started_Date: Date,
+        ended_Date: Date,
         description: String,
         imageUrl: String,
-        Started_Date: Date,
-        Ended_Date: Date,
         customer: { 
             type: Schema.Types.ObjectId, 
             ref: 'User',

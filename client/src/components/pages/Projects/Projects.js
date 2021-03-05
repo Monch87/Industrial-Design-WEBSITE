@@ -39,7 +39,7 @@ class Projects extends Component {
         return (
             <>
                 <Container as="section">
-                    <Button onClick={() => this.togglemodalForm(true)} variant="dark" className="new-project-btn">Create new project</Button>
+                    {this.props.loggedUser && <Button onClick={() => this.togglemodalForm(true)} variant="dark" className="new-project-btn">Create new project</Button>}
                     <ProjectsList projects={this.state.projects} />
                 </Container>
 
@@ -50,6 +50,7 @@ class Projects extends Component {
                     <Modal.Body>
                         <ProjectForm closeModal={() => this.togglemodalForm(false)} refreshList={() => this.chargingProjects()} />
                     </Modal.Body>
+                    {/* {user.role === "ADMIN" && <Form></Form>}  */}
                 </Modal>
             </>
         )

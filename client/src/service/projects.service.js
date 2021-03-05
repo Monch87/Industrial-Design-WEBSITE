@@ -3,7 +3,8 @@ import axios from 'axios'
 class ProjectService {
     constructor(){
         this.api = axios.create({
-            baseURL: `${process.env.REACT_APP_API_URL}/designer` //package.json trabajo en el script de inicio (start) y creo una variable de entorno
+            baseURL: `${process.env.REACT_APP_API_URL}/designer`, //package.json trabajo en el script de inicio (start) y creo una variable de entorno
+            withCredentials: true
         })
     }
 

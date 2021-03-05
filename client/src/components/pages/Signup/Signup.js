@@ -9,7 +9,7 @@ class Signup extends Component {
         super()
         this.state = {
             username: '',
-            password: '',
+            password: ''
         }
 
         this.authService = new AuthService()
@@ -27,8 +27,8 @@ class Signup extends Component {
         this.authService
             .signup(this.state)
             .then(response => {
-                this.props.storeUser(response.data)
-                this.props.history.push('/projects-list')
+                this.props.appUser(response.data)
+                this.props.history.push('/profile')
             })
             .catch(err => console.log({ err }))
     }
