@@ -5,7 +5,7 @@ Design project is a website for people who are looking to someone to provide ind
 
 ## Description
 
-Design project integrates Google maps to show the designer location. Provides all users with a profile page if they are suppliers/partners or clients with their respective forms and information.
+Design project integrates designs projects by the designer with the respectice customer's reviews. Also provides a customer log-in in order to create the review. All sign-ups will be created by the admin. In contact information there is a form in order to contact the designer.
 
 
 
