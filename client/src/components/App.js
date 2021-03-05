@@ -11,7 +11,7 @@ class App extends Component {
 constructor(){
   super()
   this.state={
-    loggedUser:undefined /// aqui tengo que hacer algo
+    loggedUser:undefined /// aqui tengo que hacer user rol
     
   }
   this.authService = new AuthService()
