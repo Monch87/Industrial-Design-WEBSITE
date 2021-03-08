@@ -18,8 +18,7 @@ class Projects extends Component {
     }
 
     componentDidMount() {
-        this.chargingProjects()
-
+         this.chargingProjects()
     }
 
     chargingProjects() {

@@ -1,11 +1,13 @@
 import { Container } from 'react-bootstrap'
 
+
+
 const Profile = ({loggedUser}) => {
 
 return ( 
 <Container> 
 {/* 
-    /*  username: '',
+    username: '',
      TODO
      avatar: {
          type: String,
@@ -13,10 +15,7 @@ return (
      },
       */}
 
-<h4> hola </h4>
-
         </Container> 
-
 )
 
 } 

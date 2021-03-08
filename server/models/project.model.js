@@ -23,8 +23,8 @@ const projectSchema = new Schema(
             ref: 'User',
             required: true
         },
-        imageUrl: String
-        // ,review: String
+        imageUrl: String,
+        review: String
     },
     {
         timestamps: true

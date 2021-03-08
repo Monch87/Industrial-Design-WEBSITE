@@ -1,9 +1,9 @@
 import { Component } from 'react'
-import { Container, Row, Col, Button, Modal } from 'react-bootstrap'
+import { Container, Row, Col, Button, Modal, Form } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import ProjectFormEdit from './../Project-form/Project-form-Edit'
-
+import ProjectForm from './../Project-form/Project-form'
 import ProjectService from './../../../service/projects.service'
+
 
 class ProjectDetails extends Component {
 
@@ -38,10 +38,31 @@ class ProjectDetails extends Component {
         this.projectService
             .deleteProject(project_id)
             .then(response => {
-                this.setState({ project: response.data })
-                this.props.refreshList()
-             })
+                this.props.history.push("/projects-list")
+            })
             .catch(err => console.log(err))
+    }
+
+    formatDate(date) {
+        if (date == null)
+            return null
+        else
+            return new Date(date).toISOString().slice(0, 10)
+    }
+
+    editReview(){
+        this.projectService
+            .editProject(this.state.project?._id, this.state)
+            .then(response => {
+                this.setState({ project: response.data })
+                this.chargingProjects()
+            })
+            .catch(error => console.log(error))
+    }
+    
+    handleInputChange(e) {
+        const { name, value } = e.target
+        this.setState({ [name]: value })
     }
 
     render() {
@@ -58,21 +79,35 @@ class ProjectDetails extends Component {
                         <Col md={4}>
                             <h3> Details: </h3>
                             <hr />
-                            <p>Started: {this.state.project?.startedProject}</p>
-                            <p>Ended: {this.state.project?.endedProject}</p>
+                            <p>Started: {this.formatDate(this.state.project?.startedProject)}</p>
+                            <p>Ended: {this.formatDate(this.state.project?.endedProject)}</p>
                             <p>Description: {this.state.project?.description}</p>
                             {this.props.loggedUser?.role === "ADMIN" ?
                                 <div>
                                     <Button onClick={() => this.togglemodalForm(true)} variant="outline-secondary" size="sm" style={{ width: '50%' }}>
-                                        <Link to={`/details/${this.state.project?._id}`} className="btn secondary"><h2>Edit</h2></Link>
+                                        <Link to={`/details/${this.state.project?._id}`} className="btn secondary"><h3>Edit</h3></Link>
                                     </Button>
                                     <Button onClick={() => this.deleteProjects(this.state.project?._id)} variant="outline-secondary" size="sm" style={{ width: '50%' }}>
-                                        <Link to="/projects-list" className="btn secondary"><h2>Delete</h2></Link>
+                                        <Link to="/projects-list" className="btn secondary"></Link><h3>Delete</h3>
                                     </Button>
                                 </div> : ""}
+
+                            {this.state.project?.owner == this.props.loggedUser?._id || this.props.loggedUser?.role === "ADMIN" ?
+                            <Form.Group>
+                                <Form.Label> Review :</Form.Label>
+                                <Form.Control as="textarea" rows={3} name="review" placeholder="Leave your review here" onChange={e => this.handleInputChange(e)}/>
+                                <Button onClick={() => this.editReview()} variant="outline-secondary" size="sm" style={{ width: '50%' }}>
+                                  <Link to={`/details/${this.state.project?._id}`}  placeholder="Search"  className="btn">Save</Link>
+                                </Button>
+                            </Form.Group>
+                            : "" }
+                                
                             <Link to="/projects-list" className="btn btn-dark">Go back</Link>
                             <hr />
                         </Col>
+                    </Row>
+                    <Row>
+                        <p>Comment: {(this.state.project?.review)}</p>
                     </Row>
                 </Container>
 
@@ -82,7 +117,7 @@ class ProjectDetails extends Component {
                         <Modal.Title>Edit Project</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <ProjectFormEdit closeModal={() => this.togglemodalForm(false)} project={this.state.project} refreshList={() => this.chargingProjects()} />{/*users={this.users}*/}
+                        <ProjectForm closeModal={() => this.togglemodalForm(false)} project={this.state.project} refreshList={() => this.chargingProjects()}/>
                     </Modal.Body>
                 </Modal>
             </>

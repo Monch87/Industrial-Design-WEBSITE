@@ -1,7 +1,7 @@
-import { Card, Col, ButtonGroup } from 'react-bootstrap'
+import { Card, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-const ProjectCard = ({ title, imageUrl, _id, loggedUser }) => {
+const ProjectCard = ({ title, imageUrl, _id }) => {
 
     return (
         <Col md={6} className= "project-card">
