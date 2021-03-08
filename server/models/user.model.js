@@ -13,15 +13,15 @@ const userSchema = new Schema(
             type: String,
             required: true
         },
-        avatar: {
-            type: String,
-            default: 'avatarDefault.jpg',
-        },
+        // avatar: {
+        //     type: String,
+        //     default: 'avatarDefault.jpg',
+        // },
         role: {
             type: String,
             enum: ['USER', 'ADMIN'],
             default: 'USER'
-        },
+        }
     },
     {
         timestamps: true

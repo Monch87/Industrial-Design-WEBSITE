@@ -15,6 +15,7 @@ const Navigation = ({ appUser, loggedUser }) => {
             .catch(err => console.log(err))
     }
 
+
     return (
         <Navbar className="justify-content-center" bg="transparent" variant="light" expand="md" style={{ marginBottom: 30 }}>
             <Link to="/">
@@ -23,8 +24,8 @@ const Navigation = ({ appUser, loggedUser }) => {
                     src={logo}
                     width="120"
                     height="80"
-                    className="d-inline-block align-top"  
-           />{' '} </Navbar.Brand>
+                    className="d-inline-block align-top"
+                />{' '} </Navbar.Brand>
             </Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -42,25 +43,23 @@ const Navigation = ({ appUser, loggedUser }) => {
                     {
                         loggedUser
                             ?
-                            <Nav.Link as="span" onClick={() => logoutUser()}>Log out</Nav.Link>
+                            <div> 
+                            <Nav.Link as="span" onClick = {() => logoutUser()}> Log out
+                            </Nav.Link> 
+                                {loggedUser.role === "ADMIN" &&
+                                <NavLink to="/signup">
+                                    <Nav.Link as="span"> Sign up </Nav.Link>
+                                </NavLink> }
+                            </div>
                             :
                             <>
-                                <NavLink to="/signup"> {/*{user.role === "ADMIN" && <Link editar projectos />} */}
-                                    <Nav.Link as="span">Sign up</Nav.Link>
-                                </NavLink>
-                                <NavLink to="/profile">   {/* {user.role === "ADMIN" && <Link editar projectos />} */}
-                                    <Nav.Link as="span">Profile</Nav.Link>
-                                </NavLink>
                                 <NavLink to="/login">
                                     <Nav.Link as="span">Log in</Nav.Link>
                                 </NavLink>
                             </>
                     }
-                      
-                      {/* //TODO cambiar el estilo en commo es presentado en la navbar cambiarlo porque 
-                      aparezca cuando inicie seción con un WELCOME USERNAME*/}
-                    <NavLink to="/">
-                        <Nav.Link as="span">{loggedUser ? loggedUser.username : 'Welcome'}</Nav.Link>
+                    <NavLink to="/">  {/* TODO A LLEVAR A MI PROJECT ID DEL USER  */}
+                        <Nav.Link as="span">{loggedUser ? <div>Welcome: {loggedUser.username} </div>: " "}</Nav.Link>
                     </NavLink>
                 </Nav>
             </Navbar.Collapse>

@@ -13,7 +13,7 @@ class ProjectService {
     getProject = projectId => this.api.get(`/oneProject/${projectId}`)
     saveProject = projectDetails => this.api.post('/newProject', projectDetails)
     editProject = (projectId, projectDetails) => this.api.put(`/editProject/${projectId}`, projectDetails)
-    deleteProject = projectId => this.api.get(`/deleteProject/${projectId}`) 
+    deleteProject = projectId => this.api.delete(`/deleteProject/${projectId}`) 
 }
 
 export default ProjectService

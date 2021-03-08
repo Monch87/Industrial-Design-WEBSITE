@@ -3,18 +3,28 @@ const Schema = mongoose.Schema;
 
 const projectSchema = new Schema(
     {
-        title: String,
-        started_Date: Date,
-        ended_Date: Date,
-        description: String,
-        imageUrl: String,
-        customer: { 
-            type: Schema.Types.ObjectId, 
-            ref: 'User',
-            required: true,
-            unique: true, 
+        title: {
+            type: String,
+            required: true
         },
-        review: String
+        startedProject: {
+            type: Date,
+            required: true
+        },
+        endedProject: {
+            type: Date
+        },
+        description: {
+            type: String,
+            required: true
+        },
+        owner: {
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+            required: true
+        },
+        imageUrl: String
+        // ,review: String
     },
     {
         timestamps: true
@@ -22,3 +32,6 @@ const projectSchema = new Schema(
 );
 
 module.exports = mongoose.model("Project", projectSchema);
+
+
+

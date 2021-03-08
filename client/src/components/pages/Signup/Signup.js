@@ -28,7 +28,7 @@ class Signup extends Component {
             .signup(this.state)
             .then(response => {
                 this.props.appUser(response.data)
-                this.props.history.push('/profile')
+                this.props.history.push('/')
             })
             .catch(err => console.log({ err }))
     }
@@ -53,16 +53,6 @@ class Signup extends Component {
                                 <Form.Label>Password</Form.Label>
                                 <Form.Control type="password" name="password" value={this.state.password} onChange={e => this.handleInputChange(e)} />
                             </Form.Group>
-
-                            {/* <Form.Group>
-                                <Form.Label>Avatar</Form.Label>
-                                <Form.Control type="text" name="avatar" value={this.state.avatar} onChange={e => this.handleInputChange(e)} />
-                            </Form.Group>
-
-                            <Form.Group>
-                                <Form.Label>Role</Form.Label>
-                                <Form.Control type="text" name="role" value={this.state.role} onChange={e => this.handleInputChange(e)} />
-                            </Form.Group> */}
 
                             <Button variant="dark" block type="submit">Register</Button>
                         </Form>

@@ -32,12 +32,13 @@ router.get('/oneProject/:project_id', (req, res) => {
 
 router.post('/newProject', (req, res) => {
 
+    const project = { ...req.body, owner: req.user._id }
+
     Project
-        .create(req.body)
+        .create(project)
         .then(response => res.json(response))
         .catch(err => res.status(500).json({ code: 500, message: 'Error saving projects', err }))
 })
-
 
 router.put('/editProject/:project_id', (req, res) => {
 
@@ -48,7 +49,7 @@ router.put('/editProject/:project_id', (req, res) => {
 })
 
 
-router.get('/deleteProject/:project_id', (req, res) => {
+router.delete('/deleteProject/:project_id', (req, res) => {
 
     const project_id = req.params.project_id
 

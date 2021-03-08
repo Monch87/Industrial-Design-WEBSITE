@@ -11,11 +11,7 @@ return (
          type: String,
          default: 'avatarDefault.jpg',
      },
-     role: {
-         type: String,
-         enum: ['USER', 'ADMIN'],
-         default: 'USER'
-     },     */}
+      */}
 
 <h4> hola </h4>
 

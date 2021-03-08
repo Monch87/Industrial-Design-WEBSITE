@@ -11,8 +11,7 @@ class App extends Component {
 constructor(){
   super()
   this.state={
-    loggedUser:undefined /// aqui tengo que hacer user rol
-    
+    loggedUser: undefined,
   }
   this.authService = new AuthService()
 }
@@ -40,7 +39,7 @@ render (){
     <>
       <Navigation appUser={user => this.appUser(user)} loggedUser={this.state.loggedUser} />
       <main>
-        <Routes appUser={user => this.appUser(user)} loggedUser={this.state.loggedUser} />
+        <Routes appUser={user => this.appUser(user)} loggedUser={this.state.loggedUser} users={users =>users} />
       </main>
       <Footer />
     </>

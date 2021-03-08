@@ -5,7 +5,7 @@
 
 
 .project-card img {
-    height: 400px;
+    height: 150px;
     object-fit: cover;
 }
 
@@ -13,6 +13,7 @@
 .project-card h2 {
 font-size: 1.4em;
 font-weight: 300;
+/* align-items: center; */
 }
 
 

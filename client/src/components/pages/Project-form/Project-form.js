@@ -10,18 +10,11 @@ class ProjectForm extends Component {
         super()
         this.state = {
             title: '',
-            started_Date: '',
-            ended_Date: '',
+            startedProject: '',
+            endedProject: '',
             description: '',
-            imageUrl: ''
-            /*customer: ''
-            {
-            type: Schema.Types.ObjectId,
-            ref: 'User',
-            required: true,
-            unique: true,
-            } */
-            /*review-customer: '' */
+            imageUrl: '',
+            owner: ''
         }
 
         this.projectService = new ProjectService()
@@ -35,6 +28,8 @@ class ProjectForm extends Component {
     handleSubmit(e) {
 
         e.preventDefault()
+
+        this.state.owner = this.props.user_id
 
         this.projectService
             .saveProject(this.state)
@@ -56,33 +51,27 @@ class ProjectForm extends Component {
                     </Form.Group>
 
                     <Form.Group>
-                        <Form.Label>Started project date:</Form.Label>
-                        <Form.Control type="text" name="started-date" value={this.state.started_Date} onChange={e => this.handleInputChange(e)} />
+                        <Form.Label>Date started:</Form.Label>
+                        <Form.Control type="date" name="startedProject" innertext={this.state.startedProject} onChange={e => this.handleInputChange(e)} />
                     </Form.Group>
 
                     <Form.Group>
-                        <Form.Label>Ended project date:</Form.Label>
-                        <Form.Control type="text" name="ended-date" value={this.state.ended_Date} onChange={e => this.handleInputChange(e)} />
+                        <Form.Label>Date ended:</Form.Label>
+                        <Form.Control type="date" name="endedProject" innertext={this.state.endedProject} onChange={e => this.handleInputChange(e)} />
                     </Form.Group>
 
                     <Form.Group>
                         <Form.Label>Description:</Form.Label>
                         <Form.Control as="textarea" rows={3} name="description" innertext={this.state.description} onChange={e => this.handleInputChange(e)} />
-                    </Form.Group>                  {/* TODO -TOCHECK USÉ INNERTEXT EN VEZ DE VALUE  */}
+                    </Form.Group>
 
                     <Form.Group>
                         <Form.Label>Image(URL):</Form.Label>
                         <Form.Control type="text" name="imageUrl" value={this.state.imageUrl} onChange={e => this.handleInputChange(e)} />
                     </Form.Group>
 
-                    <Form.Group>
-                        <Form.Label>Customer:</Form.Label>
-                        <Form.Control type="text" name="customer" value={this.state.customer} onChange={e => this.handleInputChange(e)} />
-                    </Form.Group>
-
-                    <Button variant="primary" type="submit">Create new project</Button>
+                    <Button variant="primary" type="submit">Done</Button>
                 </Form>
-
             </Container>
         )
     }
