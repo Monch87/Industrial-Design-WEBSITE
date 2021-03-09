@@ -1,10 +1,9 @@
 const express = require('express')
 const router = express.Router()
-
 const Project = require('./../models/project.model')
 const User = require('./../models/user.model')
 
-router.get('/allProjects', (req, res) => { 
+router.get('/allProjects', (req, res) => {
 
     Project
         .find()
@@ -23,7 +22,7 @@ router.get('/byOwner/:id', (req, res) => {
 
 
 router.get('/oneProject/:project_id', (req, res) => {
-  
+
     Project
         .findById(req.params.project_id)
         .then(response => res.json(response))
@@ -68,6 +67,8 @@ router.get('/allCustomers', (req, res) => {
         .then(response => res.json(response))
         .catch(err => res.status(500).json({ code: 500, message: 'Error fetching users', err }))
 })
+
+
 
 
 module.exports = router

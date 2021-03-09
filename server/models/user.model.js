@@ -15,7 +15,7 @@ const userSchema = new Schema(
         },
         // avatar: {
         //     type: String,
-        //     default: 'avatarDefault.jpg',
+        //     default: 'https://res.cloudinary.com/dxslsbznp/image/upload/v1615285562/avatarDefault_ex5uea.png',
         // },
         role: {
             type: String,

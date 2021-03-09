@@ -22,3 +22,9 @@ return (
 
 export default Profile
 
+// byOwnerproject(user_id) {
+//     this.projectService
+//         .getbyOwner(user_id)
+//         .then(response => this.setState({ project: response.data }))
+//         .catch(err => console.log(err))
+// }

@@ -5,14 +5,14 @@
 
 
 .project-card img {
-    height: 150px;
+    height: 250px;
     object-fit: cover;
 }
 
 
-.project-card h2 {
+.project-card h2, h3 {
 font-size: 1.4em;
-font-weight: 300;
+font-weight: 200;
 /* align-items: center; */
 }
 

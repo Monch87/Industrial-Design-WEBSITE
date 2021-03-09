@@ -84,19 +84,19 @@ class ProjectDetails extends Component {
                             <p>Description: {this.state.project?.description}</p>
                             {this.props.loggedUser?.role === "ADMIN" ?
                                 <div>
-                                    <Button onClick={() => this.togglemodalForm(true)} variant="outline-secondary" size="sm" style={{ width: '50%' }}>
-                                        <Link to={`/details/${this.state.project?._id}`} className="btn secondary"><h3>Edit</h3></Link>
+                                    <Button onClick={() => this.togglemodalForm(true)} variant="outline-secondary" size="sm" style={{ width: '30%' }}>
+                                        <Link to={`/details/${this.state.project?._id}`} className="btn">Edit</Link>
                                     </Button>
-                                    <Button onClick={() => this.deleteProjects(this.state.project?._id)} variant="outline-secondary" size="sm" style={{ width: '50%' }}>
-                                        <Link to="/projects-list" className="btn secondary"></Link><h3>Delete</h3>
+                                    <Button onClick={() => this.deleteProjects(this.state.project?._id)} variant="outline-secondary" size="sm" style={{ width: '30%' }}>
+                                        <Link to="/projects-list" className="btn">Delete</Link>
                                     </Button>
                                 </div> : ""}
 
-                            {this.state.project?.owner == this.props.loggedUser?._id || this.props.loggedUser?.role === "ADMIN" ?
+                            {this.state.project?.owner === this.props.loggedUser?._id || this.props.loggedUser?.role === "ADMIN" ?
                             <Form.Group>
                                 <Form.Label> Review :</Form.Label>
                                 <Form.Control as="textarea" rows={3} name="review" placeholder="Leave your review here" onChange={e => this.handleInputChange(e)}/>
-                                <Button onClick={() => this.editReview()} variant="outline-secondary" size="sm" style={{ width: '50%' }}>
+                                <Button onClick={() => this.editReview()} variant="outline-secondary" size="sm" style={{ width: '30%' }}>
                                   <Link to={`/details/${this.state.project?._id}`}  placeholder="Search"  className="btn">Save</Link>
                                 </Button>
                             </Form.Group>
@@ -107,11 +107,11 @@ class ProjectDetails extends Component {
                         </Col>
                     </Row>
                     <Row>
-                        <p>Comment: {(this.state.project?.review)}</p>
-                    </Row>
+                        <h3><i>Our client said about us:</i></h3> {(this.state.project?.review)}
+                    </Row>     {/* ver que cambio de aqui, si dejo el nombre del user o no */}
                 </Container>
-
-
+                         
+                         
                 <Modal show={this.state.showForm} onHide={() => this.togglemodalForm(false)}>
                     <Modal.Header closeButton>
                         <Modal.Title>Edit Project</Modal.Title>
