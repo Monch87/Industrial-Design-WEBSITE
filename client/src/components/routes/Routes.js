@@ -17,7 +17,7 @@ const Routes = ({ appUser, loggedUser }) => {
             <Route path="/details/:project_id" render={props => <ProjectDetails {...props} loggedUser={loggedUser} />} />
             <Route path="/signup" render={props => loggedUser ? <Signup appUser={appUser} {...props}  /> : <Redirect to="/" />} />
             <Route path="/login" render={(props) => <Login appUser={appUser} {...props} />} />
-            <Route path="/contact" render={() => <Contact />}/>
+            <Route path="/contact" render={(props) => <Contact {...props} />}/>
         </Switch>
     )
 }

@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import { Form, Button, Container, Col } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import ContactService from './../../../service/contact.service'
 
 
@@ -32,7 +32,7 @@ class SendContact extends Component {
 
         this.contactService
             .sendMail(this.state.contact)
-            .then(details => console.log('Contacto enviado', details))//Falta redireccionar tras enviar
+            .then(this.props.history.push("/"))
             .catch(error => console.log(error))
     }
 

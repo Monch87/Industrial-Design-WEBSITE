@@ -12,12 +12,12 @@ router.put('/contact', (req, res) => {
     transporter.sendMail({
         from: email,
         to: 'vamminfo@gmail.com',
-        subject: 'Contacto de ' + name + ' / Subject: '+ subject,
+        subject: 'Contact: ' + name + ' / Subject: ' + subject,
         text: message,
         html: `<b>${message}</b>`
     })
-
-        .catch(err => res.status(500).json({ code: 500, message: 'Error sending message', err }))
+    .then(response => res.json(response))
+    .catch(err => res.status(500).json({ code: 500, message: 'Error sending message', err }))
 })
 
 module.exports = router
