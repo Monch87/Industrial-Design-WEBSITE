@@ -1,4 +1,4 @@
-# Design Project
+# Design Project :bulb: :desktop_computer:
 
 Design project is a website for people who are looking to someone to provide industrial designs or people who want to  contribute in a project with the designer.
 
@@ -43,13 +43,18 @@ Design project integrates designs projects by the designer with the respectice c
 - Bootstrap
 - React
 - React-dom
+- React-datepicker
 - React-router-dom
 - Axios
 - Nodemailer
-
-
 - Cloudinary
-- API https://www.thecocktaildb.com/
+- API
+- bcrypt
+- CORS
+- Express
+- Mongoose
+- Passport
+- SweetAlert
 
 
 
