@@ -2,11 +2,12 @@
 
 Design project is a website for people who are looking to someone to provide industrial designs or people who want to  contribute in a project with the designer.
 
+https://user-images.githubusercontent.com/72262776/118506345-881dd580-b72d-11eb-9370-e4859797c0b9.mp4
+
 
 ## Description
 
 The website integrates design projects by the designer with the respectice customer's reviews. Also provides a customer log-in in order to create the review. All sign-ups will be created by the admin. In contact information there is a form in order to contact the designer.
-
 
 
 ## Endpoints table
