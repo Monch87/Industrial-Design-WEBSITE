@@ -28,9 +28,9 @@ The website integrates design projects by the designer with the respectice custo
 
   ## Instructions
 
- 1. Access to the file: "client" and server from your terminal. 
- 2. BACKEND: Run the app in the development mode "npm run dev". Open http://localhost:5000 in order to view it in the browser.
- 3. FRONTEND: Run the app in the development mode "npm start". Open http://localhost:3000 in order to view it in the browser.
+ 1. Access to the files: "client" and "server" from your terminal. 
+ 2. BACKEND (SERVER): Run the app in the development mode "npm run dev". Open http://localhost:5000 in order to view it in the browser.
+ 3. FRONTEND (CLIENT): Run the app in the development mode "npm start". Open http://localhost:3000 in order to view it in the browser.
  4. Run MongoDB in order to take a look the Database.
 
 ![idweb](https://user-images.githubusercontent.com/72262776/118497177-1e99c900-b725-11eb-9d7f-997bbf1b55c4.png)
