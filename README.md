@@ -1,4 +1,4 @@
-# Design Project 	:mexico: :desktop_computer:
+# Design Project 	:bulb: :desktop_computer:
 
 Design project is a website for people who are looking to someone to provide industrial designs or people who want to  contribute in a project with the designer.
 
